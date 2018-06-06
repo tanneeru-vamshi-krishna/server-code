@@ -1,16 +1,7 @@
-const http = require('http');
+const express = require('express')
+const app = express()
 
-const name = 'node-hello-world';
-const port = '139.59.45.145';
+app.get('/', (req, res) => res.send('Hello World!'))
 
-const app = new http.Server();
-
-app.on('request', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.write('Hello World');
-  res.end('\n');
-});
-
-app.listen(port, () => {
-  console.log(`${name} is listening on port ${port}`);
-});
+app.listen(3000
+, () => console.log('Example app listening on port 3000!'))
